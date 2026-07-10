@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Debugging &#8212; Warp 1.14.0.dev0</title>
+    <title>Debugging &#8212; Warp 1.16.0.dev0</title>
   
   
   
@@ -44,7 +44,7 @@
 
 
 
-    <script src="../_static/documentation_options.js?v=b37a29d0"></script>
+    <script src="../_static/documentation_options.js?v=4ae37cce"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -62,13 +62,13 @@
 
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Limitations" href="limitations.html" />
-    <link rel="prev" title="Configuration" href="configuration.html" />
+    <link rel="next" title="Deterministic Execution" href="deterministic_execution.html" />
+    <link rel="prev" title="C++ and CUDA Workflows" href="cpp_cuda_workflows.html" />
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.14.0.dev0" />
+  <meta name="docsearch:version" content="1.16.0.dev0" />
 
 
   </head>
@@ -139,11 +139,11 @@
       
     
     
-    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.14.0.dev0 - Home"/>
-    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.14.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.16.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.16.0.dev0 - Home"/>
   
   
-    <p class="title logo__title">Warp 1.14.0.dev0</p>
+    <p class="title logo__title">Warp 1.16.0.dev0</p>
   
 </a></div>
     
@@ -278,11 +278,11 @@
       
     
     
-    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.14.0.dev0 - Home"/>
-    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.14.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.16.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.16.0.dev0 - Home"/>
   
   
-    <p class="title logo__title">Warp 1.14.0.dev0</p>
+    <p class="title logo__title">Warp 1.16.0.dev0</p>
   
 </a>
 
@@ -387,7 +387,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_cuda_workflows.html">C++ and CUDA Workflows</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deterministic_execution.html">Deterministic Execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using Warp</a></li>
@@ -399,6 +401,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../deep_dive/codegen.html">Code Generation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deep_dive/allocators.html">Allocators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deep_dive/memory_access.html">CPU/GPU cross-device memory access</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deep_dive/concurrency.html">Concurrency</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deep_dive/profiling.html">Profiling</a></li>
 </ul>
@@ -414,7 +417,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_autograd.html">warp.autograd</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_config.html">warp.config</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_fem.html">warp.fem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_jax.html">warp.jax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_optim.html">warp.optim</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_render.html">warp.render</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_sparse.html">warp.sparse</a></li>
@@ -522,24 +524,108 @@ types using the <a class="reference internal" href="../language_reference/_gener
 </pre></div>
 </div>
 </section>
-<section id="verbose-mode-and-printing-launches">
-<h2>Verbose Mode and Printing Launches<a class="headerlink" href="#verbose-mode-and-printing-launches" title="Link to this heading">#</a></h2>
+<section id="diagnostics-and-logging">
+<h2>Diagnostics and Logging<a class="headerlink" href="#diagnostics-and-logging" title="Link to this heading">#</a></h2>
 <p>For complex applications, it can be difficult to understand the order-of-operations that lead to a bug. To help diagnose
 these issues, Warp supports a simple option to print out all launches and arguments to the console:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">print_launches</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>Verbose mode can also be enabled with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>
+<section id="log-level">
+<h3>Log Level<a class="headerlink" href="#log-level" title="Link to this heading">#</a></h3>
+<p>Warp emits informational, warning, and error messages through its own logging
+infrastructure. The verbosity is controlled by a single global threshold:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">LOG_DEBUG</span>    <span class="c1"># most verbose: codegen details, module loads</span>
+<span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">LOG_INFO</span>     <span class="c1"># default: init banner, compile timings</span>
+<span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">LOG_WARNING</span>  <span class="c1"># warnings and errors only</span>
+<span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">LOG_ERROR</span>    <span class="c1"># errors only</span>
 </pre></div>
 </div>
-<p>In verbose mode, additional messages will be printed to standard output regarding program progress and
-code generation, such as when operations may be non-differentiable.</p>
-<p>Verbose <em>warnings</em> can be enabled with:</p>
+<p>Messages below the threshold are suppressed. Errors always emit regardless of
+the level.</p>
+<p>At <code class="docutils literal notranslate"><span class="pre">wp.LOG_DEBUG</span></code>, additional messages are printed to standard output
+regarding program progress and code generation, such as when operations may be
+non-differentiable.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The legacy <code class="docutils literal notranslate"><span class="pre">wp.config.verbose</span></code> and <code class="docutils literal notranslate"><span class="pre">wp.config.quiet</span></code> flags are
+deprecated. Migrate to <code class="docutils literal notranslate"><span class="pre">wp.config.log_level</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wp.config.verbose</span> <span class="pre">=</span> <span class="pre">True</span></code> → <code class="docutils literal notranslate"><span class="pre">wp.config.log_level</span> <span class="pre">=</span> <span class="pre">wp.LOG_DEBUG</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wp.config.quiet</span> <span class="pre">=</span> <span class="pre">True</span></code> → <code class="docutils literal notranslate"><span class="pre">wp.config.log_level</span> <span class="pre">=</span> <span class="pre">wp.LOG_WARNING</span></code></p></li>
+</ul>
+<p>Reading or setting either deprecated flag emits a one-time
+<code class="docutils literal notranslate"><span class="pre">DeprecationWarning</span></code>. During the deprecation window the flag is still
+honored alongside <code class="docutils literal notranslate"><span class="pre">log_level</span></code>, so existing code keeps working. Remove the
+flag once your code sets <code class="docutils literal notranslate"><span class="pre">log_level</span></code> directly.</p>
+<p><code class="docutils literal notranslate"><span class="pre">wp.config.verbose_warnings</span></code> is not deprecated. It is an orthogonal
+formatting flag that controls whether warning messages include the source
+location and has no <code class="docutils literal notranslate"><span class="pre">log_level</span></code> equivalent.</p>
+</div>
+</section>
+<section id="verbose-warnings">
+<h3>Verbose Warnings<a class="headerlink" href="#verbose-warnings" title="Link to this heading">#</a></h3>
+<p>To include the source location in each <code class="docutils literal notranslate"><span class="pre">Warp</span> <span class="pre">UserWarning</span></code> message, enable:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wp</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">verbose_warnings</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>This can be useful in identifying where a particular <code class="docutils literal notranslate"><span class="pre">Warp</span> <span class="pre">UserWarning</span></code> message is being emitted from.</p>
+<p>This can be useful in identifying where a particular warning is being emitted from.</p>
+</section>
+<section id="custom-loggers">
+<h3>Custom Loggers<a class="headerlink" href="#custom-loggers" title="Link to this heading">#</a></h3>
+<p>By default Warp routes diagnostics through a built-in logger that writes
+debug and info messages to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>, errors to <code class="docutils literal notranslate"><span class="pre">sys.stderr</span></code>, and
+routes warnings through Python’s <a class="reference external" href="https://docs.python.org/3/library/warnings.html#module-warnings" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code></a> filter machinery so that
+<code class="docutils literal notranslate"><span class="pre">-W</span></code> flags and <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.simplefilter" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">warnings.simplefilter()</span></code></a> work as expected.</p>
+<p>Frameworks that want to capture Warp’s output can supply a custom logger.
+<a class="reference internal" href="../api_reference/_generated/warp.Logger.html#warp.Logger" title="warp.Logger"><code class="xref py py-class docutils literal notranslate"><span class="pre">wp.Logger</span></code></a> is a runtime-checkable <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Protocol" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protocol</span></code></a>,
+so any object with the four methods below works. There is no need to inherit
+from a Warp base class; framework integrators typically wrap an existing
+logger in a small adapter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyLogger</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span> <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span> <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="o">...</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span> <span class="o">...</span>
+
+<span class="n">wp</span><span class="o">.</span><span class="n">set_logger</span><span class="p">(</span><span class="n">MyLogger</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">warning</span></code> method must accept the <code class="docutils literal notranslate"><span class="pre">category</span></code> and <code class="docutils literal notranslate"><span class="pre">stacklevel</span></code> keyword
+arguments even if the adapter ignores them: the internal emitter passes them
+by name, so an adapter without those parameters raises <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> at the
+first warning. The built-in default logger uses them to integrate with
+Python’s <a class="reference external" href="https://docs.python.org/3/library/warnings.html#module-warnings" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code></a> filter machinery.</p>
+<p>To forward Warp’s diagnostics into an existing <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> pipeline, wrap
+<a class="reference external" href="https://docs.python.org/3/library/logging.html#logging.Logger" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Logger</span></code></a> in a small adapter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">wp</span>
+
+<span class="n">app_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;myapp.warp&quot;</span><span class="p">)</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">StdlibAdapter</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">debug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span> <span class="n">app_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span> <span class="n">app_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">warning</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span> <span class="n">app_logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span> <span class="n">app_logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="n">wp</span><span class="o">.</span><span class="n">set_logger</span><span class="p">(</span><span class="n">StdlibAdapter</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>This routes all of Warp’s output through stdlib <a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">logging</span></code></a> (and any
+handlers, filters, or formatters configured on it). Note that this loses
+the default logger’s integration with Python’s <a class="reference external" href="https://docs.python.org/3/library/warnings.html#module-warnings" title="(in Python v3.14)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">warnings</span></code></a> filter
+machinery (e.g. <code class="docutils literal notranslate"><span class="pre">-W</span></code> flags, <a class="reference external" href="https://docs.python.org/3/library/warnings.html#warnings.filterwarnings" title="(in Python v3.14)"><code class="xref py py-func docutils literal notranslate"><span class="pre">warnings.filterwarnings()</span></code></a>); the adapter
+emits warnings as plain log records instead.</p>
+<p>To temporarily install a logger, use <a class="reference internal" href="../api_reference/_generated/warp.ScopedLogger.html#warp.ScopedLogger" title="warp.ScopedLogger"><code class="xref py py-class docutils literal notranslate"><span class="pre">wp.ScopedLogger</span></code></a>,
+which restores the previous logger on context exit:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">wp</span><span class="o">.</span><span class="n">ScopedLogger</span><span class="p">(</span><span class="n">my_capture_logger</span><span class="p">):</span>
+    <span class="n">wp</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">my_kernel</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>  <span class="c1"># diagnostics flow to my_capture_logger</span>
+</pre></div>
+</div>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">None</span></code> to <code class="docutils literal notranslate"><span class="pre">wp.set_logger()</span></code> or <code class="docutils literal notranslate"><span class="pre">wp.ScopedLogger()</span></code> to restore
+Warp’s built-in default logger.</p>
+</section>
 </section>
 <section id="debug-mode-compilation">
 <span id="debug-mode"></span><h2>Debug Mode Compilation<a class="headerlink" href="#debug-mode-compilation" title="Link to this heading">#</a></h2>
@@ -684,6 +770,39 @@ be used to detect subtle memory-access issues in Warp applications, e.g.</p>
 </div>
 <p>The Compute Sanitizer suite is available through the <a class="reference external" href="https://developer.nvidia.com/cuda-toolkit">CUDA Toolkit</a>.</p>
 </section>
+<section id="cpu-memory-error-detection-with-addresssanitizer">
+<h2>CPU Memory Error Detection with AddressSanitizer<a class="headerlink" href="#cpu-memory-error-detection-with-addresssanitizer" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://clang.llvm.org/docs/AddressSanitizer.html">AddressSanitizer</a> (ASan) can detect
+out-of-bounds accesses, use-after-free, and similar memory errors in JIT-compiled CPU kernels.
+Build Warp’s native libraries with the sanitizer enabled:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>build_lib.py<span class="w"> </span>--sanitize<span class="o">=</span>address
+</pre></div>
+</div>
+<p>When <code class="docutils literal notranslate"><span class="pre">warp-clang</span></code> is built this way, Warp automatically instruments CPU kernels with
+<code class="docutils literal notranslate"><span class="pre">-fsanitize=address</span></code> and resolves their sanitizer callbacks against the host’s single
+in-process ASan runtime. An out-of-bounds access into a <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array" title="warp.array"><code class="xref py py-class docutils literal notranslate"><span class="pre">wp.array</span></code></a> is then
+reported as a <code class="docutils literal notranslate"><span class="pre">heap-buffer-overflow</span></code>, including the allocation site.</p>
+<p>The ASan runtime must be initialized before Warp’s libraries load, so set the environment
+<strong>before</strong> <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">warp</span></code>:</p>
+<ul>
+<li><p><strong>Linux</strong>: preload the ASan runtime so it initializes first and its symbols are globally
+visible to the JIT:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="k">$(</span>gcc<span class="w"> </span>-print-file-name<span class="o">=</span>libasan.so<span class="k">)</span><span class="w"> </span><span class="nv">ASAN_OPTIONS</span><span class="o">=</span><span class="nv">verify_asan_link_order</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>python<span class="w"> </span>sim.py
+</pre></div>
+</div>
+</li>
+<li><p><strong>Windows</strong>: ensure <code class="docutils literal notranslate"><span class="pre">clang_rt.asan_dynamic-x86_64.dll</span></code> (shipped with the Visual Studio
+toolchain) is on <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p></li>
+<li><p><strong>macOS</strong>: usually works via <code class="docutils literal notranslate"><span class="pre">&#64;rpath</span></code> to the Clang ASan runtime shipped with Xcode.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Run kernels in release mode when hunting out-of-bounds array accesses with ASan.
+In <a class="reference internal" href="#debug-mode"><span class="std std-ref">Debug Mode Compilation</span></a>, Warp’s own <code class="docutils literal notranslate"><span class="pre">assert</span></code>-based bounds check aborts first; ASan
+instrumentation is applied regardless of mode. Global-buffer-overflow on a kernel’s own
+static variables is not detected, because the JIT does not run kernel module constructors.</p>
+</div>
+</section>
 </section>
 
 
@@ -697,20 +816,20 @@ be used to detect subtle memory-access issues in Warp applications, e.g.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="configuration.html"
+       href="cpp_cuda_workflows.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Configuration</p>
+        <p class="prev-next-title">C++ and CUDA Workflows</p>
       </div>
     </a>
     <a class="right-next"
-       href="limitations.html"
+       href="deterministic_execution.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Limitations</p>
+        <p class="prev-next-title">Deterministic Execution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -737,7 +856,12 @@ be used to detect subtle memory-access issues in Warp applications, e.g.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-diagnostics">Environment Diagnostics</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#printing-values">Printing Values</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verbose-mode-and-printing-launches">Verbose Mode and Printing Launches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagnostics-and-logging">Diagnostics and Logging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#log-level">Log Level</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verbose-warnings">Verbose Warnings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-loggers">Custom Loggers</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-mode-compilation">Debug Mode Compilation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assertions">Assertions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-through-debugging">Step-Through Debugging</a></li>
@@ -745,6 +869,7 @@ be used to detect subtle memory-access issues in Warp applications, e.g.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error-verification">CUDA Error Verification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-non-finite-values">Detecting Non-Finite Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-toolkit-debugging-tools">CUDA Toolkit Debugging Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cpu-memory-error-detection-with-addresssanitizer">CPU Memory Error Detection with AddressSanitizer</a></li>
 </ul>
   </nav></div>
 
