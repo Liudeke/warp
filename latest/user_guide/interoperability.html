@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Interoperability &#8212; Warp 1.16.0.dev0</title>
+    <title>Interoperability &#8212; Warp 1.20.0.dev0</title>
   
   
   
@@ -28,66 +28,74 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=cb8930eaaf36d9849b67" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/nvidia-sphinx-theme.css?v=933278ad" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=3d681599" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=ca94f457" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=cb8930eaaf36d9849b67"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67" />
 
 
 
-    <script src="../_static/documentation_options.js?v=4ae37cce"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/documentation_options.js?v=1cb47380"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=fd10adb8"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/interoperability';</script>
     <script>
-        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_version = '0.21.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://nvidia.github.io/warp/versions.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'latest';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             true;
         </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/copy-page-source.js?v=f9064be3"></script>
 
     <link rel="icon" href="../_static/favicon.png"/>
 
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PyTorch Interoperability" href="interoperability_pytorch.html" />
-    <link rel="prev" title="Tiles" href="tiles.html" />
+    <link rel="next" title="PyTorch Interoperability" href="interoperability/pytorch.html" />
+    <link rel="prev" title="C++ and CUDA Workflows" href="programming_model/cpp_cuda_workflows.html" />
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="1.16.0.dev0" />
+  <meta name="docsearch:version" content="1.20.0.dev0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
 
 
   </head>
 
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-default-mode="">
+
 
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
-
 
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -113,7 +121,7 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
   <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
@@ -139,11 +147,11 @@
       
     
     
-    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.16.0.dev0 - Home"/>
-    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.16.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.20.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.20.0.dev0 - Home"/>
   
   
-    <p class="title logo__title">Warp 1.16.0.dev0</p>
+    <p class="title logo__title">Warp 1.20.0.dev0</p>
   
 </a></div>
     
@@ -193,11 +201,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -210,8 +225,7 @@
           
           
           
-          <a href="https://github.com/NVIDIA/warp" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/NVIDIA/warp" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -222,8 +236,7 @@
           
           
           
-          <a href="https://pypi.org/project/warp-lang" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">PyPI</span></a>
+          <a href="https://pypi.org/project/warp-lang" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
         </li>
 </ul></div>
       
@@ -278,11 +291,11 @@
       
     
     
-    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.16.0.dev0 - Home"/>
-    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.16.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Warp 1.20.0.dev0 - Home"/>
+    <img src="../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Warp 1.20.0.dev0 - Home"/>
   
   
-    <p class="title logo__title">Warp 1.16.0.dev0</p>
+    <p class="title logo__title">Warp 1.20.0.dev0</p>
   
 </a>
 
@@ -326,11 +339,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -343,8 +363,7 @@
           
           
           
-          <a href="https://github.com/NVIDIA/warp" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/NVIDIA/warp" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -355,8 +374,7 @@
           
           
           
-          <a href="https://pypi.org/project/warp-lang" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">PyPI</span></a>
+          <a href="https://pypi.org/project/warp-lang" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
         </li>
 </ul></div>
         
@@ -375,35 +393,52 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">User Guide</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility &amp; Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="runtime.html">Runtime</a></li>
-<li class="toctree-l1"><a class="reference internal" href="devices.html">Devices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="differentiability.html">Differentiability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generics.html">Generics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tiles.html">Tiles</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="programming_model.html">Programming Model</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="programming_model/generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_model/tiles.html">Tiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_model/code_generation.html">Code Generation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="programming_model/cpp_cuda_workflows.html">C++ and CUDA Workflows</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Interoperability</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="interoperability_pytorch.html">PyTorch Interoperability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="interoperability_jax.html">JAX Interoperability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interoperability/pytorch.html">PyTorch Interoperability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interoperability/jax.html">JAX Interoperability</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="execution_and_performance.html">Execution and Performance</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="execution_and_performance/concurrency.html">Concurrency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution_and_performance/memory_management.html">Memory Allocation and Access</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution_and_performance/profiling.html">Profiling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution_and_performance/deterministic_execution.html">Deterministic Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="execution_and_performance/reducing_compilation_and_startup_time.html">Reducing Compilation and Startup Time</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cpp_cuda_workflows.html">C++ and CUDA Workflows</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deterministic_execution.html">Deterministic Execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contribution_guide.html">Contribution Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="publications.html">Publications using Warp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatibility &amp; Support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deep Dive</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Language Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../deep_dive/codegen.html">Code Generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deep_dive/allocators.html">Allocators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deep_dive/memory_access.html">CPU/GPU cross-device memory access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deep_dive/concurrency.html">Concurrency</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deep_dive/profiling.html">Profiling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../language_reference/builtins.html">Built-Ins</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp.html">warp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_autograd.html">warp.autograd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_build_experimental.html">warp.build_experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_config.html">warp.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_fem.html">warp.fem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_geometry.html">warp.geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_optim.html">warp.optim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_render.html">warp.render</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_sparse.html">warp.sparse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_types.html">warp.types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_utils.html">warp.utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Domain Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -411,21 +446,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../domain_modules/fem.html">FEM Toolkit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../domain_modules/render.html">Rendering</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Project</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp.html">warp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_autograd.html">warp.autograd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_config.html">warp.config</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_fem.html">warp.fem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_optim.html">warp.optim</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_render.html">warp.render</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_sparse.html">warp.sparse</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_types.html">warp.types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api_reference/warp_utils.html">warp.utils</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Language Reference</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../language_reference/builtins.html">Built-Ins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/contribution_guide.html">Contributing to Warp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/publications.html">Publications using Warp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../project/changelog.html">Changelog</a></li>
 </ul>
 </div>
 </nav></div>
@@ -472,10 +497,43 @@
       
         <div class="header-article-item">
 
+
+
 <div class="d-flex justify-content-end w-100">
-  <a href="../_sources/user_guide/interoperability.rst.txt">
-    <i class="fa-solid fa-file-code"></i> View page source
-  </a>
+  <div class="btn-group copy-page-source pst-js-only" data-page-source-control role="group" aria-label="Page source">
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-secondary"
+      data-copy-page-source
+      data-page-source-url="../_sources/user_guide/interoperability.rst.txt"
+      disabled
+    >
+      <i class="fa-solid fa-copy" aria-hidden="true"></i>
+      <span data-copy-page-source-label>Copy source</span>
+    </button>
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span class="visually-hidden">Page source options</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li>
+        <a class="dropdown-item" href="../_sources/user_guide/interoperability.rst.txt">
+          <i class="fa-solid fa-file-code" aria-hidden="true"></i>
+          View source
+        </a>
+      </li>
+    </ul>
+    <span class="visually-hidden" role="status" aria-live="polite" data-copy-page-source-status></span>
+  </div>
+  <noscript>
+    <a href="../_sources/user_guide/interoperability.rst.txt">
+      <i class="fa-solid fa-file-code" aria-hidden="true"></i> View source
+    </a>
+  </noscript>
 </div>
 </div>
       
@@ -493,6 +551,15 @@
   <section id="interoperability">
 <h1>Interoperability<a class="headerlink" href="#interoperability" title="Link to this heading">#</a></h1>
 <p>Warp interoperates with other Python-based frameworks through standard interface protocols. Warp accepts external arrays in kernel launches as long as they implement the <code class="docutils literal notranslate"><span class="pre">__array__</span></code>, <code class="docutils literal notranslate"><span class="pre">__array_interface__</span></code>, or <code class="docutils literal notranslate"><span class="pre">__cuda_array_interface__</span></code> protocols. This works with NumPy, CuPy, PyTorch, JAX, and Paddle.</p>
+<section id="guides-in-this-section">
+<h2>Guides in this section<a class="headerlink" href="#guides-in-this-section" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="interoperability/pytorch.html"><span class="doc">PyTorch</span></a>: Share arrays and streams,
+integrate autograd, and call Warp kernels from custom operators.</p></li>
+<li><p><a class="reference internal" href="interoperability/jax.html"><span class="doc">JAX</span></a>: Convert arrays, call Warp kernels through
+FFI, and use Warp with JAX transformations and distributed computation.</p></li>
+</ul>
+</section>
 <section id="quick-reference">
 <h2>Quick Reference<a class="headerlink" href="#quick-reference" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -545,14 +612,73 @@
 </div>
 <p>For full framework coverage, see:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="interoperability_pytorch.html"><span class="doc">PyTorch Interoperability</span></a></p></li>
-<li><p><a class="reference internal" href="interoperability_jax.html"><span class="doc">JAX Interoperability</span></a></p></li>
+<li><p><a class="reference internal" href="interoperability/pytorch.html"><span class="doc">PyTorch Interoperability</span></a></p></li>
+<li><p><a class="reference internal" href="interoperability/jax.html"><span class="doc">JAX Interoperability</span></a></p></li>
 </ul>
 <p>Paddle is documented inline below. NumPy, CuPy, Numba, and DLPack interop is protocol-level and covered in the sections that follow.</p>
 </section>
 <section id="pass-arrays-directly">
-<h2>Pass Arrays Directly<a class="headerlink" href="#pass-arrays-directly" title="Link to this heading">#</a></h2>
-<p>Any object that implements <code class="docutils literal notranslate"><span class="pre">__array_interface__</span></code> (CPU) or <code class="docutils literal notranslate"><span class="pre">__cuda_array_interface__</span></code> (GPU) can be passed to <a class="reference internal" href="../api_reference/_generated/warp.launch_function.html#warp.launch" title="warp.launch"><code class="xref py py-func docutils literal notranslate"><span class="pre">wp.launch</span></code></a> inputs without calling a conversion function. This is the fastest on-ramp for most use cases.</p>
+<span id="array-subclass-migration"></span><h2>Pass Arrays Directly<a class="headerlink" href="#pass-arrays-directly" title="Link to this heading">#</a></h2>
+<p>External objects that implement <code class="docutils literal notranslate"><span class="pre">__array_interface__</span></code> (CPU) or
+<code class="docutils literal notranslate"><span class="pre">__cuda_array_interface__</span></code> (GPU) can be passed to concrete regular-array
+parameters of <a class="reference internal" href="../api_reference/_generated/warp.launch_function.html#warp.launch" title="warp.launch"><code class="xref py py-func docutils literal notranslate"><span class="pre">wp.launch</span></code></a> without calling a conversion
+function. This is the fastest on-ramp for most use cases.</p>
+<p>Warp arrays and their <a class="reference internal" href="compatibility.html#array-subclasses"><span class="std std-ref">subclasses</span></a> use their native Warp
+descriptor when launched. Warp checks their native family, dtype, and ndim
+instead of reinterpreting an inherited or overridden array interface. Their
+gradient pointer and <code class="docutils literal notranslate"><span class="pre">retain_grad</span></code> flag follow the parent’s behavior. Code
+that previously reached the external-interface fallback for a Warp subclass
+must account for these changes:</p>
+<ul class="simple">
+<li><p>Native gradient pointers and flags are preserved. Tape gradients for
+overwritten outputs or in-place writes can therefore change to match the
+parent array’s behavior, and <code class="docutils literal notranslate"><span class="pre">retain_grad=True</span></code> is honored.</p></li>
+<li><p>Native storage is used even when a subclass overrides its array interface.
+The kernel no longer receives storage, a dtype, or a shape supplied by that
+alternate interface. Struct and <code class="docutils literal notranslate"><span class="pre">bfloat16</span></code> arrays use their native dtype
+support without requiring an array-interface representation.</p></li>
+<li><p>Family, dtype, and dimensionality mismatches are rejected through normal
+Warp array validation. Use <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array.view" title="warp.array.view"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.view()</span></code></a> for a
+supported dtype reinterpretation, or <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array.reshape" title="warp.array.reshape"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.reshape()</span></code></a>
+and <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array.flatten" title="warp.array.flatten"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.flatten()</span></code></a> to change shape explicitly.
+Use a typed Warp array and a conversion such as <a class="reference internal" href="../api_reference/_generated/warp.utils.array_cast.html#warp.utils.array_cast" title="warp.utils.array_cast"><code class="xref py py-func docutils literal notranslate"><span class="pre">warp.utils.array_cast()</span></code></a>
+when element values need to be converted rather than reinterpreted.
+Explicit conversion expresses the intended element layout; it does not
+reproduce accidental strided reads from a rank mismatch. For example,
+float32 data of shape <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">3)</span></code> can use <code class="docutils literal notranslate"><span class="pre">a.view(wp.vec3)</span></code> for a
+<code class="docutils literal notranslate"><span class="pre">wp.array[wp.vec3]</span></code> parameter. A vec3 array can use
+<code class="docutils literal notranslate"><span class="pre">a.view(wp.float32).flatten()</span></code> for a one-dimensional scalar parameter,
+while a two-dimensional scalar array can use <code class="docutils literal notranslate"><span class="pre">a.flatten()</span></code>.</p></li>
+<li><p>Device-access validation follows
+<a class="reference internal" href="../api_reference/_generated/warp.config.launch_array_access_mode.html#warp.config.launch_array_access_mode" title="warp.config.launch_array_access_mode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">warp.config.launch_array_access_mode</span></code></a>. The default <code class="docutils literal notranslate"><span class="pre">RELAXED</span></code> mode
+performs no pre-launch access checks; <code class="docutils literal notranslate"><span class="pre">CHECKED</span></code> diagnoses known-invalid
+access and warns when access cannot be verified, while <code class="docutils literal notranslate"><span class="pre">STRICT</span></code> requires
+arrays to be allocated on the launch device. See
+<a class="reference internal" href="execution_and_performance/memory_management.html#launch-array-access-checks"><span class="std std-ref">Checked Launch Validation</span></a>.
+Wrong-device storage that the interface path previously rejected can now
+reach a kernel unchecked in <code class="docutils literal notranslate"><span class="pre">RELAXED</span></code> mode, just as for a parent array.
+Move arrays to the launch device or select an appropriate validation mode.</p></li>
+<li><p>The subclass’s <code class="docutils literal notranslate"><span class="pre">__ctype__()</span></code> method is now called by concrete launches.
+Overrides must describe the object’s own storage and preserve the native
+descriptor contract. Fully initialize the parent and allow its descriptor
+cache and bookkeeping writes; a shell that only forwards public attributes
+through an array interface is insufficient.</p></li>
+<li><p>Classification uses actual inheritance. A <code class="docutils literal notranslate"><span class="pre">weakref.proxy</span></code> or a wrapper
+whose <code class="docutils literal notranslate"><span class="pre">__class__</span></code> property advertises a Warp class is not a Warp array at
+native-family boundaries. Pass the referenced Warp array for struct fields,
+indexed/strided copies, and explicit adjoint arguments. Its separate external
+array interface can still be used for concrete regular-array launch parameters.</p></li>
+<li><p>Recorded commands from <code class="docutils literal notranslate"><span class="pre">wp.launch(...,</span> <span class="pre">record_cmd=True)</span></code> retain arguments.
+Manually constructing <code class="docutils literal notranslate"><span class="pre">wp.Launch</span></code> does not retain the incidental owner
+reference previously supplied by the interface fallback; use recorded commands
+or keep the arrays alive explicitly.</p></li>
+</ul>
+<p>A separate, non-Warp object that owns or references an array and exposes an
+array interface continues to use the external-interface path for concrete
+regular-array parameters. Keep its storage owner alive according to that
+protocol’s requirements. CPU <code class="docutils literal notranslate"><span class="pre">array.numpy()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.asarray</span></code> still use the
+array interface for interface-compatible dtypes. CUDA <code class="docutils literal notranslate"><span class="pre">array.numpy()</span></code> copies
+native Warp storage instead.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">warp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">wp</span>
 
@@ -564,7 +690,7 @@
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">wp</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">saxpy</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="n">wp</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">saxpy</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>On CUDA, the same pattern works with CuPy, PyTorch, or any framework that exposes <code class="docutils literal notranslate"><span class="pre">__cuda_array_interface__</span></code>:</p>
@@ -574,31 +700,45 @@
     <span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">cp</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
 
-<span class="n">wp</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">saxpy</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda:0&quot;</span><span class="p">)</span>
+<span class="n">wp</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">saxpy</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="s2">"cuda:0"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When passing CUDA arrays, ensure the device on which the arrays reside matches the device on which the kernel is launched.</p>
 </section>
 <section id="numpy">
 <h2>NumPy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
-<p>Warp arrays may be converted to a NumPy array through the <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array.numpy" title="warp.array.numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.numpy()</span></code></a> method. When the Warp array lives on the <code class="docutils literal notranslate"><span class="pre">cpu</span></code> device this returns a zero-copy view onto the underlying Warp allocation. If the array lives on a <code class="docutils literal notranslate"><span class="pre">cuda</span></code> device, it is first copied back to a temporary buffer and then copied to NumPy.</p>
-<p>Warp CPU arrays also implement the <code class="docutils literal notranslate"><span class="pre">__array_interface__</span></code> protocol and can be used to construct NumPy arrays directly:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+<p>Warp arrays may be converted to a NumPy array through the <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array.numpy" title="warp.array.numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.numpy()</span></code></a> method. When the Warp array lives on the <code class="docutils literal notranslate"><span class="pre">cpu</span></code> device, this returns a zero-copy view onto the underlying Warp allocation. When the array lives on a <code class="docutils literal notranslate"><span class="pre">cuda</span></code> device, this method synchronously copies the data to a temporary CPU allocation and returns a NumPy view of that allocation.</p>
+<p>Warp CPU arrays also implement the <code class="docutils literal notranslate"><span class="pre">__array_interface__</span></code> protocol, so NumPy can create zero-copy views of them directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="o">&gt;</span> <span class="p">[</span><span class="mf">1.</span> <span class="mf">2.</span> <span class="mf">3.</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Data type conversion utilities are also available for convenience:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">warp_type</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">float32</span>
-<span class="o">...</span>
-<span class="n">numpy_type</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">dtype_to_numpy</span><span class="p">(</span><span class="n">warp_type</span><span class="p">)</span>
-<span class="o">...</span>
-<span class="n">a</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">warp_type</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy_type</span><span class="p">)</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1. 2. 3.]
 </pre></div>
 </div>
+<p>Warp does not support implicit NumPy conversion of arrays on CUDA devices, such as passing them to <code class="docutils literal notranslate"><span class="pre">np.asarray()</span></code>. Call <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array.numpy" title="warp.array.numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">array.numpy()</span></code></a> explicitly to obtain a NumPy array.</p>
+<section id="scalar-data-types">
+<span id="numpy-scalar-dtypes"></span><h3>Scalar data types<a class="headerlink" href="#scalar-data-types" title="Link to this heading">#</a></h3>
+<p>Use <a class="reference internal" href="../api_reference/_generated/warp.dtype_to_numpy.html#warp.dtype_to_numpy" title="warp.dtype_to_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">wp.dtype_to_numpy()</span></code></a> to convert Warp scalar types to NumPy dtype specifications. Explicit conversion ensures the intended NumPy dtype is selected across both older and newer NumPy versions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warp</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">wp</span>
+
+<span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">wp</span><span class="o">.</span><span class="n">dtype_to_numpy</span><span class="p">(</span><span class="n">wp</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">wp</span><span class="o">.</span><span class="n">dtype_to_numpy</span><span class="p">(</span><span class="n">wp</span><span class="o">.</span><span class="n">float32</span><span class="p">))</span>
+<span class="k">assert</span> <span class="n">indices</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">values</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The converted dtype can also be used with <code class="docutils literal notranslate"><span class="pre">np.dtype()</span></code>, <code class="docutils literal notranslate"><span class="pre">astype()</span></code>, and structured dtype fields. Warp scalar values require an explicit dtype when constructing NumPy arrays.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Warp’s Boolean, signed and unsigned integer, and float16/float32/float64 types expose their equivalent NumPy dtype through the <code class="docutils literal notranslate"><span class="pre">__numpy_dtype__</span></code> attribute. NumPy 2.4 and later recognize this attribute, avoiding object-dtype allocations and their performance overhead when a Warp scalar type is passed directly as a dtype specification. Older NumPy versions still select the object dtype in that case. Continue using <code class="docutils literal notranslate"><span class="pre">wp.dtype_to_numpy()</span></code> for consistent behavior across NumPy versions. This protocol does not change dtype inference from Warp scalar values.</p>
+</div>
+<p><a class="reference internal" href="../api_reference/_generated/warp.bfloat16.html#warp.bfloat16" title="warp.bfloat16"><code class="xref py py-class docutils literal notranslate"><span class="pre">wp.bfloat16</span></code></a> does not expose <code class="docutils literal notranslate"><span class="pre">__numpy_dtype__</span></code> because NumPy has no native bfloat16 dtype.</p>
+<p>The existing <code class="docutils literal notranslate"><span class="pre">wp.dtype_to_numpy(wp.bfloat16)</span></code> mapping returns <code class="docutils literal notranslate"><span class="pre">np.uint16</span></code> for raw storage. When initializing or filling arrays with this dtype, use values that are already encoded as bfloat16 bit patterns. To convert floating-point values to bfloat16, use <code class="docutils literal notranslate"><span class="pre">wp.array([1.5],</span> <span class="pre">dtype=wp.bfloat16)</span></code> or <code class="docutils literal notranslate"><span class="pre">ml_dtypes.bfloat16</span></code> as the NumPy dtype.</p>
 <p>To create Warp arrays from NumPy arrays, use <a class="reference internal" href="../api_reference/_generated/warp.from_numpy.html#warp.from_numpy" title="warp.from_numpy"><code class="xref py py-func docutils literal notranslate"><span class="pre">warp.from_numpy()</span></code></a> or pass the NumPy array as the <code class="docutils literal notranslate"><span class="pre">data</span></code> argument of the <a class="reference internal" href="../api_reference/_generated/warp.array.html#warp.array" title="warp.array"><code class="xref py py-class docutils literal notranslate"><span class="pre">warp.array</span></code></a> constructor directly.</p>
+</section>
 </section>
 <section id="cupy-numba">
 <h2>CuPy / Numba<a class="headerlink" href="#cupy-numba" title="Link to this heading">#</a></h2>
@@ -608,7 +748,7 @@
 <section id="paddle">
 <span id="paddle-interop"></span><h2>Paddle<a class="headerlink" href="#paddle" title="Link to this heading">#</a></h2>
 <p>Warp provides helper functions to convert arrays to/from Paddle:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"cpu"</span><span class="p">)</span>
 
 <span class="c1"># convert to Paddle tensor</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">wp</span><span class="o">.</span><span class="n">to_paddle</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
@@ -651,12 +791,12 @@
 
     <span class="n">l</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span>
     <span class="n">wp</span><span class="o">.</span><span class="n">launch</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="n">xs</span><span class="p">],</span> <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">xs</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="se">\t</span><span class="s2">loss: </span><span class="si">{</span><span class="n">l</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="se">\t</span><span class="s2">loss: </span><span class="si">{</span><span class="n">l</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Paddle follows the same performance-tuning pattern as PyTorch. See the “Performance Tuning” section of <a class="reference internal" href="interoperability_pytorch.html"><span class="doc">PyTorch Interoperability</span></a> for <code class="docutils literal notranslate"><span class="pre">return_ctype</span></code>, direct tensor passing, and reuse-don’t-reconvert guidance.</p>
+<p>Paddle follows the same performance-tuning pattern as PyTorch. See the “Performance Tuning” section of <a class="reference internal" href="interoperability/pytorch.html"><span class="doc">PyTorch Interoperability</span></a> for <code class="docutils literal notranslate"><span class="pre">return_ctype</span></code>, direct tensor passing, and reuse-don’t-reconvert guidance.</p>
 </div>
 </section>
 </section>
@@ -693,10 +833,6 @@
 </ul>
 <p>The framework-specific converters (<a class="reference internal" href="../api_reference/_generated/warp.to_torch.html#warp.to_torch" title="warp.to_torch"><code class="xref py py-func docutils literal notranslate"><span class="pre">warp.to_torch()</span></code></a>, <a class="reference internal" href="../api_reference/_generated/warp.to_paddle.html#warp.to_paddle" title="warp.to_paddle"><code class="xref py py-func docutils literal notranslate"><span class="pre">warp.to_paddle()</span></code></a>) are usually a better choice than DLPack when one exists, because DLPack does not carry gradient information. If autograd needs to flow between Warp and the other framework, use the direct converters. DLPack is most useful when no framework-specific converter exists, or when both producer and consumer are DLPack-native.</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="interoperability_pytorch.html">PyTorch Interoperability</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interoperability_jax.html">JAX Interoperability</a></li>
-</ul>
 </div>
 </section>
 </section>
@@ -712,16 +848,16 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tiles.html"
+       href="programming_model/cpp_cuda_workflows.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tiles</p>
+        <p class="prev-next-title">C++ and CUDA Workflows</p>
       </div>
     </a>
     <a class="right-next"
-       href="interoperability_pytorch.html"
+       href="interoperability/pytorch.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -748,11 +884,15 @@
     class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guides-in-this-section">Guides in this section</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-reference">Quick Reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pass-arrays-directly">Pass Arrays Directly</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">NumPy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-data-types">Scalar data types</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupy-numba">CuPy / Numba</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paddle">Paddle</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-optimization-using-warp-to-paddle">Example: Optimization using <code class="xref py py-func docutils literal notranslate"><span class="pre">warp.to_paddle()</span></code></a></li>
@@ -793,8 +933,8 @@
   
 
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=cb8930eaaf36d9849b67"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=cb8930eaaf36d9849b67"></script>
 
 
   <footer class="bd-footer">

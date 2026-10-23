@@ -4,25 +4,21 @@
 .. currentmodule:: warp.fem.space.shape
 
 .. autoclass:: TriangleShapeFunction
-
    
-   .. automethod:: __init__
-
    
    .. rubric:: Methods
 
    .. autosummary::
    
-      ~TriangleShapeFunction.__init__
       ~TriangleShapeFunction.make_element_inner_weight
       ~TriangleShapeFunction.make_element_inner_weight_gradient
       ~TriangleShapeFunction.make_node_coords_in_element
+      ~TriangleShapeFunction.make_node_dual_weight
       ~TriangleShapeFunction.make_node_quadrature_weight
       ~TriangleShapeFunction.make_trace_node_quadrature_weight
       ~TriangleShapeFunction.node_type_and_index
    
    
-
    
    
    .. rubric:: Attributes

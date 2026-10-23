@@ -4,19 +4,17 @@
 .. currentmodule:: warp.fem.space
 
 .. autoclass:: CovariantFunctionSpace
-
    
-   .. automethod:: __init__
-
    
    .. rubric:: Methods
 
    .. autosummary::
    
-      ~CovariantFunctionSpace.__init__
       ~CovariantFunctionSpace.divergence_valid
       ~CovariantFunctionSpace.dof_value
       ~CovariantFunctionSpace.gradient_valid
+      ~CovariantFunctionSpace.local_inverse_value_map_inner
+      ~CovariantFunctionSpace.local_inverse_value_map_outer
       ~CovariantFunctionSpace.local_value_map_inner
       ~CovariantFunctionSpace.local_value_map_outer
       ~CovariantFunctionSpace.make_field
@@ -30,7 +28,6 @@
       ~CovariantFunctionSpace.value_basis_element
    
    
-
    
    
    .. rubric:: Attributes
